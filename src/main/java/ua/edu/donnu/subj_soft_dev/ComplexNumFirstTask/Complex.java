@@ -2,6 +2,7 @@ package ua.edu.donnu.subj_soft_dev.ComplexNumFirstTask;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Scanner;
 
 /**
  *
@@ -13,6 +14,9 @@ import java.util.Objects;
  */
 public class Complex implements Serializable {
 
+    // for read from console
+    private static final Scanner sc = new Scanner(System.in);
+    // if imag = 0
     public static final double ZERO = 0.0d;
 
     private double real;
@@ -206,6 +210,17 @@ public class Complex implements Serializable {
         double ad = this.real*d;
 
         return new Complex((ac+bd)/(zreal2+zimag2),(bc-ad)/(zreal2+zimag2));
+    }
+
+    /**
+     * method for entering a complex number from the console
+     * @return new Complex number
+     */
+    public Complex readFromConsole(){
+        double real = sc.nextDouble();
+        double imag = sc.nextDouble();
+
+        return new Complex(real, imag);
     }
 
     /**
