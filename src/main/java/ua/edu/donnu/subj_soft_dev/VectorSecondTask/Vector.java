@@ -18,8 +18,6 @@ public class Vector<E> implements Cloneable {
     private E arr[];
     private int currentSize = 0;
 
-    private java.util.Vector vector;
-
     /**
      * constructor.
      */
@@ -31,7 +29,7 @@ public class Vector<E> implements Cloneable {
     }
 
     public Vector(int capacity) {
-        if(capacity < 0){
+        if(capacity <= 0){
             throw new IndexOutOfBoundsException("Capacity: " + capacity);
         }
 
