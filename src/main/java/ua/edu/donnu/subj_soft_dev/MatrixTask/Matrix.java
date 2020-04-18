@@ -54,7 +54,7 @@ public class Matrix<E> implements Cloneable {
     }
 
     public int setCountRow(int row){
-        if(row <= this.matrix.length){
+        if(row <= 0){
             throw new IllegalArgumentException("Incorrect size!");
         }
 
@@ -63,7 +63,7 @@ public class Matrix<E> implements Cloneable {
     }
 
     public int setCountColumn(int column){
-        if(column <= this.matrix[0].length){
+        if(column <= 0){
             throw new IllegalArgumentException("Incorrect size!");
         }
 
@@ -101,7 +101,7 @@ public class Matrix<E> implements Cloneable {
         E sum;
         for (int i = 0; i < answer.getCountRow(); i++) {
             for (int j = 0; j < answer.getCountColumn(); j++) {
-                sum = addNumbers(answer.getValue(i,j), answer.getValue(i,j));
+                sum = addNumbers(m.getValue(i,j), answer.getValue(i,j));
                 answer.setValue(i,j,sum);
             }
         }
@@ -136,7 +136,7 @@ public class Matrix<E> implements Cloneable {
         E sum;
         for (int i = 0; i < answer.getCountRow(); i++) {
             for (int j = 0; j < answer.getCountColumn(); j++) {
-                sum = subtractNumbers(answer.getValue(i,j), answer.getValue(i,j));
+                sum = subtractNumbers(answer.getValue(i,j), m.getValue(i,j));
                 answer.setValue(i,j,sum);
             }
         }
